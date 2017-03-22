@@ -25,12 +25,16 @@ Utils.onStartAction = function(data)
     
     if(data["botcheck"]){
         playBotcheckSound();
+		 document.title = "botcheck"
     } else if (data.custom){
         playBotcheckSound();
+		 document.title = "botcheck"
     } else if (data.message && data.message.indexOf("You need mana to continue.") > -1){
         playBotcheckSound();
+		document.title = "Out Of Mana"
     } else if (data.message && data.message.indexOf("You reached your action limit.") > -1){
         playBotcheckSound();
+		 document.title = "Action Limit"
     }
 }
 
@@ -41,6 +45,7 @@ Combat.getBotcheck = function()
 {
     Combat.getBotcheckOriginal();
     playBotcheckSound();
+	document.title = "Botcheck"
 }
 
 console.log("Botcheck Sound Loaded.");
